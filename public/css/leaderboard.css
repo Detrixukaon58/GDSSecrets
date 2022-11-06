@@ -1,0 +1,28 @@
+:root{
+    --hot-pink: #ff00b3;
+}
+table, td, tr{
+    border: 3pt solid black;
+    border-collapse: collapse;
+    padding-left: 100pt;
+    padding-right: 100pt;
+    font-family: sans-serif;
+    font-size: large;
+    background-color: blueviolet;
+}
+body{
+    background-color: var(--hot-pink);
+    background-blend-mode: color-burn;
+    background-size: auto;
+    background-attachment: local;
+
+    animation:
+        dean-norris 10s linear infinite,
+        dean-norris-bg 20s linear infinite
+        ;
+}
+#particles-js
+{
+    background-color: #17014d;
+    height: 100vh;
+}

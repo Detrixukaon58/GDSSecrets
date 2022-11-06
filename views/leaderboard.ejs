@@ -1,0 +1,29 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="css/leaderboard.css"/>
+</head>
+<body>
+    <div>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>Score</td>
+                </tr>
+                <tr>
+                <% if(data.length) { for(var i =0; i < data.length; i++) { %>
+                    <td><%= data[i].name %></td>
+                    <td><%= data[i].score %></td>
+                <%}} else {%>
+                    <td>                 </td>
+                    <td>                 </td>
+                <% } %>
+                </tr>
+            </tbody>
+        </table>
+
+        <% if(data.length == 0) { %>
+            <p>No one has completed any tasks</p>
+            <h3>BE THE FIRST</h3>
+        <% } %>
+    </div>
+</body>
