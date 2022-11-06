@@ -11,7 +11,7 @@ table, td, tr{
     background-color: blueviolet;
 }
 body{
-    background-color: var(--hot-pink);
+    background-color: transparent;
     background-blend-mode: color-burn;
     background-size: auto;
     background-attachment: local;
