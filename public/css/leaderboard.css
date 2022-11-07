@@ -6,9 +6,10 @@ table, td, tr{
     border-collapse: collapse;
     padding-left: 100pt;
     padding-right: 100pt;
-    font-family: sans-serif;
+    font-family: consolas;
     font-size: large;
-    background-color: blueviolet;
+    color:aliceblue;
+    background-color: rgba(40, 12, 66, 0.733);
 }
 body{
     background-color: transparent;
@@ -25,4 +26,17 @@ body{
 {
     background-color: #17014d;
     height: 100vh;
+}
+
+.glow{
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow{
+    from{
+        text-shadow: 0 0 10pt #ffffff, 0 0 20pt #ffffffff;
+    }
+    to{
+        text-shadow: 0 0 10pt #ffffff93, 0 0 20pt #ffffff93;
+    }
 }

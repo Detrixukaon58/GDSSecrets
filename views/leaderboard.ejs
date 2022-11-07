@@ -1,18 +1,18 @@
 <head>
     <link rel="stylesheet" type="text/css" href="css/leaderboard.css"/>
 </head>
-<body>
+<body style="position: relative; z-index: 9999;">
     <div>
         <table>
             <tbody>
                 <tr>
-                    <td>Name</td>
-                    <td>Score</td>
+                    <td class="glow">Name</td>
+                    <td class="glow">Score</td>
                 </tr>
                 <tr>
                 <% if(data.length) { for(var i =0; i < data.length; i++) { %>
-                    <td><%= data[i].name %></td>
-                    <td><%= data[i].score %></td>
+                    <td class="glow"><%= data[i].name %></td>
+                    <td class="glow"><%= data[i].score %></td>
                 <%}} else {%>
                     <td>                 </td>
                     <td>                 </td>
