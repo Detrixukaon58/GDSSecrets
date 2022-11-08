@@ -1,0 +1,17 @@
+
+<body>
+    <% if(apps.length > 0){ %>
+        <table>
+            <tbody>
+                <% for(var i = 0; i < apps.length; i++) { %>
+                    <% var app = apps[i]; %>
+                    <tr>
+                        <th>
+                        <iframe src="applet/?icon=<%= app.icon %>&link=<%= app.link %>&name=<%= app.name %>" style="margin:0; position: absolute; z-index: 0; border: solid transparent;"></iframe>
+                        </th>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    <% } %>
+</body>

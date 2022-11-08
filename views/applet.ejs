@@ -1,0 +1,24 @@
+
+<style>
+    .desktop-app{
+        border: solid transparent;
+        background-color: transparent;
+    }
+</style>
+<button id="<%= name %>" class="desktop-app"><img src="<%= icon %>"  style="width:20pt; height:20pt;"/> <p><%= name %></p></button>
+<script>
+    var link = '<%= link %>';
+    var app = document.getElementById('<%= name %>');
+    console.log(app);
+
+    app.onclick = function(){
+        if(window.parent.document.getElementById("<%= name %>") == null){
+            var frame = window.parent.document.createElement('iframe');
+            frame.id = "<%= name %>"
+            frame.setAttribute('href', link);
+            frame.setAttribute('style', 'position:relative; top:100; left:100; height:900px; width:1600px;');
+            window.parent.document.body.appendChild(frame);
+        }
+    };
+
+</script>

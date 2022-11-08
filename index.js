@@ -9,6 +9,8 @@ var expressValidator = require('express-validator');
 var session = require('express-session');
 var sqlite3 = require('sqlite3');
 var leaderboardRoutes = require("./routes/leaderboard.js");
+var desktop = require('./routes/desktop.js')
+var applet = require('./routes/applet.js')
 
 var app = express();
 
@@ -31,6 +33,9 @@ app.use(
 app.use(flash());
 
 app.use('/leaderboard', leaderboardRoutes);
+
+app.use('/desktop', desktop)
+app.use('/applet', applet)
 
 app.use(function (req, res, next) {
     next(createError(404));
