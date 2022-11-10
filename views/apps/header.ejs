@@ -1,0 +1,41 @@
+<style>
+    body{
+        margin: 0;
+    }
+    #wrapper{
+    }
+</style>
+<div id="wrapper">
+<div style="width:100%;height:18pt;background-color: #4b0b53;margin: 0;position: fixed;border:solid #4b0b53;margin-bottom: 10;margin-right: 1.5;margin-left: 0.4;" id="header">
+</div>
+    <script>
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+        document.getElementById('header').innerHTML="<table style='padding:0;border:0;width:100%'><tbody><tr><th id='content-name'></th><th id='close-btn'></th></tr></tbody></table>";
+        var p = document.createElement('p');
+        p.setAttribute('style', 'color:white;padding-left:10pt;text-align:left;');
+        p.innerHTML = getParameterByName('name');
+        document.getElementById('content-name').appendChild(p);
+
+        var close_btn = document.createElement('button');
+        close_btn.setAttribute('style', 'border: outset red;background-color:red;color:aliceblue;justify-content:right;float:right;');
+        close_btn.innerHTML = "X";
+        close_btn.onclick = function(){
+            window.parent.document.getElementById(getParameterByName('name')).remove();
+        }
+        document.getElementById('close-btn').appendChild(close_btn);
+
+        var header = document.getElementById('header');
+        header.onclick = function(){
+
+        }
+
+    </script>
+<div id="inner-border" style="border:inset #4b0b53;margin:0;position: fixed;width: 100%;margin-top: 21pt;height: 100%;">
+<div id="app-content" style="margin: 20pt;position: relative;">

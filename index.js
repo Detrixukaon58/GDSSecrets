@@ -10,7 +10,8 @@ var session = require('express-session');
 var sqlite3 = require('sqlite3');
 var leaderboardRoutes = require("./routes/leaderboard.js");
 var desktop = require('./routes/desktop.js')
-var applet = require('./routes/applet.js')
+var applet = require('./routes/applet.js');
+var fs = require('fs');
 
 var app = express();
 
@@ -36,6 +37,15 @@ app.use('/leaderboard', leaderboardRoutes);
 
 app.use('/desktop', desktop)
 app.use('/applet', applet)
+app.set('apps/header.ejs', './views/apps/header.ejs');
+app.set('apps/footer.ejs', './views/apps/footer.ejs');
+
+fs.readdirSync('./routes/apps').forEach(file => {
+  console.log(file.replace('.js',''))
+  var appfunc = require('./routes/apps/' + file)
+  app.use('/apps/' + file.replace('.js', ''), appfunc)
+})
+
 
 app.use(function (req, res, next) {
     next(createError(404));

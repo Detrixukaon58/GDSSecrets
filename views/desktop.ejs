@@ -1,4 +1,66 @@
 
+<style>
+    .window{
+        resize: both;
+        border: outset #4b0b53 3px;
+        overflow: auto;
+        position: absolute;
+    }
+    body{
+        background-image: url(/images/Blue_Rivets.png);
+        margin: 0;
+    }
+    #taskbar{
+        position:fixed;
+        height: 30pt;
+        width: 100%;
+        background-color: darkblue;
+        vertical-align: bottom;
+        bottom: 0;
+        margin: 0;
+        left: 0;
+    }
+    #taskbar ul{
+        list-style: none;
+        margin: 0;
+        left: 0;
+        padding-left: 0;
+    }
+    #taskbar li{
+        display: inline;
+        margin: 0;
+        left: 0;
+    }
+    #content-area{
+        width: 100%;
+        height: 100%;
+        position:fixed;
+        bottom: 0;
+        top: 0;
+        pointer-events:none;
+    }
+    #start{
+        border:outset green 5pt;
+        background-color: green;
+        width:50pt;
+        height: 100%;
+        margin: 0;
+        left: 0;
+        top: 0;
+    }
+    #start p{
+        color: white;
+        top: 0;
+        font-family: 'Segoe UI';
+        padding-top: 0;
+        margin: 0;
+    }
+    #start:active{
+        border: inset green 5pt;
+    }
+</style>
+
+
 <body>
     <% if(apps.length > 0){ %>
         <table>
@@ -14,4 +76,17 @@
             </tbody>
         </table>
     <% } %>
+
+    <div id="content-area">
+
+    </div>
+
+    <div id="taskbar">
+        <ul>
+            <li>
+                <button id="start"><p>START</p></button>
+            </li>
+        </ul>
+    </div>
+
 </body>

@@ -11,12 +11,13 @@
     var app = document.getElementById('<%= name %>');
     console.log(app);
 
-    app.onclick = function(){
+    app.ondblclick = function(){
         if(window.parent.document.getElementById("<%= name %>") == null){
             var frame = window.parent.document.createElement('iframe');
             frame.id = "<%= name %>"
-            frame.setAttribute('href', link);
+            frame.setAttribute('src', link + "/?name=<%=name%>&icon=<%=icon%>");
             frame.setAttribute('style', 'position:relative; top:100; left:100; height:900px; width:1600px;');
+            frame.setAttribute('class', 'window');
             window.parent.document.body.appendChild(frame);
         }
     };
